@@ -52,7 +52,8 @@ public class MainActivity extends Activity {
         call.enqueue(new Callback<List<Card>>() {
             @Override
             public void onResponse(Call<List<Card>> call, Response<List<Card>> response) {
-                response.body();
+                List<Card> listCard = response.body();
+                showList(listCard);
             }
 
             @Override
@@ -60,18 +61,14 @@ public class MainActivity extends Activity {
                 Log.d("ERROR", "Api ERROR");
             }
         });
-        showList();
     }
-    public void showList(){
+    public void showList(List<Card> card){
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        List<String> input = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
-            input.add("Test" + i);
-        }// define an adapter
-        mAdapter = new MyAdapter(input);
+        // define an adapter
+        mAdapter = new MyAdapter(card);
         recyclerView.setAdapter(mAdapter);
     }
 }

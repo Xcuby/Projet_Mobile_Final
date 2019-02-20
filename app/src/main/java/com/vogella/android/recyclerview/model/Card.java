@@ -4,7 +4,7 @@ public class Card {
     private int cardClass;
     private boolean collectible;
     private int cost;
-    private int name;
+    private String name;
     private String rarity;
     private String set;
     private String text;
@@ -22,7 +22,7 @@ public class Card {
         return cost;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
