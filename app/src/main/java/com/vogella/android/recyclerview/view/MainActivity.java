@@ -1,4 +1,4 @@
-package com.vogella.android.recyclerview;
+package com.vogella.android.recyclerview.view;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,11 +9,10 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.vogella.android.recyclerview.MyAdapter;
+import com.vogella.android.recyclerview.RestCardApi;
 import com.vogella.android.recyclerview.model.Card;
-
-import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,12 +41,11 @@ public class MainActivity extends Activity {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.hearthstonejson.com/v1/28855/enUS/cards.collectible.json")
+                .baseUrl("https://api.hearthstonejson.com/v1/28855/enUS/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
         RestCardApi restCardApi = retrofit.create(RestCardApi.class);
-
         Call<List<Card>> call = restCardApi.getListCard();
         call.enqueue(new Callback<List<Card>>() {
             @Override
@@ -68,7 +66,7 @@ public class MainActivity extends Activity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
-        mAdapter = new MyAdapter(card);
+        mAdapter = new MyAdapter(this, card);
         recyclerView.setAdapter(mAdapter);
     }
 }

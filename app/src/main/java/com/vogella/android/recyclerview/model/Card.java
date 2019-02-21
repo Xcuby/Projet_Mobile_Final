@@ -1,7 +1,7 @@
 package com.vogella.android.recyclerview.model;
 
 public class Card {
-    private int cardClass;
+    private String cardClass;
     private boolean collectible;
     private int cost;
     private String name;
@@ -10,7 +10,7 @@ public class Card {
     private String text;
     private String type;
 
-    public int getCardClass() {
+    public String getCardClass() {
         return cardClass;
     }
 

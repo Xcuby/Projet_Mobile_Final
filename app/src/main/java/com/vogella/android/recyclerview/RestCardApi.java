@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface RestCardApi {
 
-    @GET("card")
+    @GET("cards.collectible.json")
     Call<List<Card>> getListCard();
 }
