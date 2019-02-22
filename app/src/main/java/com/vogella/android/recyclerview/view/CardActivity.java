@@ -48,7 +48,7 @@ public class CardActivity extends Activity {
         TextView collectible = findViewById(R.id.CardCollectible);
         collectible.setText("Collectible : " + cardCollectible);
         TextView text = findViewById(R.id.CardText);
-        text.setText("Text : " + cardText);
+        text.setText("Effect : " + cardText);
         ImageView id = findViewById(R.id.CardId);
         Picasso.get().load("https://art.hearthstonejson.com/v1/256x/"+cardId+".jpg").into(id);
     }

@@ -2,6 +2,7 @@ package com.vogella.android.recyclerview.view;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,7 +12,9 @@ import com.google.gson.GsonBuilder;
 import com.vogella.android.recyclerview.MyAdapter;
 import com.vogella.android.recyclerview.RestCardApi;
 import com.vogella.android.recyclerview.model.Card;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -67,5 +70,6 @@ public class MainActivity extends Activity {
         // define an adapter
         mAdapter = new MyAdapter(this, card);
         recyclerView.setAdapter(mAdapter);
+        recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
     }
 }
