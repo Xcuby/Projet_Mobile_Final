@@ -9,6 +9,7 @@ public class Card {
     private String set;
     private String text;
     private String type;
+    private String id;
 
     public String getCardClass() {
         return cardClass;
@@ -40,5 +41,9 @@ public class Card {
 
     public String getType() {
         return type;
+    }
+
+    public String getId() {
+        return id;
     }
 }

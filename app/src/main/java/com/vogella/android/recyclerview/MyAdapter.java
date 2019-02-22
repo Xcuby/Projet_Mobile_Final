@@ -1,6 +1,5 @@
 package com.vogella.android.recyclerview;
 
-import java.util.List;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -8,9 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 import com.vogella.android.recyclerview.model.Card;
 import com.vogella.android.recyclerview.view.CardActivity;
+
+import java.util.List;
+
 import xavier.albanet.projetprogrammationmobile.R;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
@@ -24,6 +29,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // each data item is just a string in this case
         public TextView txtHeader;
         public TextView txtFooter;
+        public ImageView imgIcon;
         public View layout;
 
         public ViewHolder(View v) {
@@ -31,6 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             layout = v;
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
+            imgIcon = (ImageView) v.findViewById(R.id.icon);
         }
     }
 
@@ -67,7 +74,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         final String set = currentCard.getSet();
         final boolean collectible = currentCard.isCollectible();
         final String text = currentCard.getText();
+        final String id = currentCard.getId();
         holder.txtHeader.setText(name);
+        Picasso.get().load("https://art.hearthstonejson.com/v1/256x/"+currentCard.getId()+".jpg").into(holder.imgIcon);
         holder.txtHeader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v){
@@ -80,6 +89,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 intent.putExtra("Cardset", set);
                 intent.putExtra("Cardcollectible", collectible);
                 intent.putExtra("Cardtext", text);
+                intent.putExtra("Cardid", id);
                 myContext.startActivity(intent);
             }
         });

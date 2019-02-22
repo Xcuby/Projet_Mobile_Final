@@ -2,7 +2,11 @@ package com.vogella.android.recyclerview.view;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import xavier.albanet.projetprogrammationmobile.R;
 
 public class CardActivity extends Activity {
@@ -14,7 +18,7 @@ public class CardActivity extends Activity {
     }
 
     private void getIncomingIntent(){
-        if (getIntent().hasExtra("Cardname") && getIntent().hasExtra("Cardclass") && getIntent().hasExtra("Cardcost") && getIntent().hasExtra("Cardrarity") && getIntent().hasExtra("Cardtype") && getIntent().hasExtra("Cardset") && getIntent().hasExtra("Cardtext")){
+        if (getIntent().hasExtra("Cardname") && getIntent().hasExtra("Cardclass") && getIntent().hasExtra("Cardcost") && getIntent().hasExtra("Cardrarity") && getIntent().hasExtra("Cardtype") && getIntent().hasExtra("Cardset") && getIntent().hasExtra("Cardtext") && getIntent().hasExtra("Cardid")){
             String cardName = getIntent().getStringExtra("Cardname");
             String cardClass = getIntent().getStringExtra("Cardclass");
             int cardCost = getIntent().getIntExtra("Cardcost", 0);
@@ -23,11 +27,12 @@ public class CardActivity extends Activity {
             String cardSet = getIntent().getStringExtra("Cardset");
             boolean cardCollectible = getIntent().getBooleanExtra("Cardcollectible", false);
             String cardText = getIntent().getStringExtra("Cardtext");
-            setCard(cardName, cardClass, cardCost, cardRarity, cardType, cardSet, cardCollectible, cardText);
+            String cardId = getIntent().getStringExtra("Cardid");
+            setCard(cardName, cardClass, cardCost, cardRarity, cardType, cardSet, cardCollectible, cardText, cardId);
         }
     }
 
-    private void setCard(String cardName, String cardClass, int cardCost, String cardRarity, String cardType, String cardSet, boolean cardCollectible, String cardText){
+    private void setCard(String cardName, String cardClass, int cardCost, String cardRarity, String cardType, String cardSet, boolean cardCollectible, String cardText, String cardId){
         TextView name = findViewById(R.id.CardName);
         name.setText("Name : " + cardName);
         TextView Class = findViewById(R.id.CardClass);
@@ -44,5 +49,7 @@ public class CardActivity extends Activity {
         collectible.setText("Collectible : " + cardCollectible);
         TextView text = findViewById(R.id.CardText);
         text.setText("Text : " + cardText);
+        ImageView id = findViewById(R.id.CardId);
+        Picasso.get().load("https://art.hearthstonejson.com/v1/256x/"+cardId+".jpg").into(id);
     }
 }
