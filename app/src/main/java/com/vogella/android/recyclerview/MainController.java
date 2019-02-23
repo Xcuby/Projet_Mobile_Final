@@ -18,7 +18,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainController {
 
     private MainActivity activity;
-
     public MainController(MainActivity mainActivity) {
         this.activity = mainActivity;
     }
