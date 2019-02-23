@@ -9,7 +9,7 @@ import xavier.albanet.projetprogrammationmobile.R;
 
 public class splash extends AppCompatActivity {
 
-    private static int time = 4000;
+    private static int time = 500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

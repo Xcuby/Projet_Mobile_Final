@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.vogella.android.recyclerview.MainController;
 import com.vogella.android.recyclerview.MyAdapter;
 import com.vogella.android.recyclerview.RestCardApi;
 import com.vogella.android.recyclerview.model.Card;
@@ -26,12 +27,16 @@ public class MainActivity extends Activity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private MainController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+
+        controller = new MainController(this);
+        controller.onStart();
         // use this setting to
         // improve performance if you know that changes
         // in content do not change the layout size

@@ -7,10 +7,11 @@
     tools:context="com.vogella.android.recyclerview.view.splash">
 
     <ImageView
-        android:layout_width="414dp"
-        android:layout_height="734dp"
-        android:src="@drawable/hearstone"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="-3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/splash"
+        android:background="@android:color/black"
         tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>
