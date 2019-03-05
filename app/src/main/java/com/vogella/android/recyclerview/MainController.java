@@ -1,5 +1,6 @@
 package com.vogella.android.recyclerview;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -21,6 +22,8 @@ public class MainController {
     public MainController(MainActivity mainActivity) {
         this.activity = mainActivity;
     }
+    SharedPreferences sharedPreferences = activity.getSharedPreferences(Constants.DATABASE_NAME, activity.MODE_PRIVATE);
+
 
     public void onStart(){
         Gson gson = new GsonBuilder()
@@ -33,19 +36,39 @@ public class MainController {
                 .build();
 
         RestCardApi restCardApi = retrofit.create(RestCardApi.class);
-        Call<List<Card>> call = restCardApi.getListCard();
-        call.enqueue(new Callback<List<Card>>() {
-            @Override
-            public void onResponse(Call<List<Card>> call, Response<List<Card>> response) {
-                List<Card> listCard = response.body();
+            if (!sharedPreferences.contains("1")) {
+
+                Call<List<Card>> call = restCardApi.getListCard();
+                call.enqueue(new Callback<List<Card>>() {
+                    @Override
+                    public void onResponse(Call<List<Card>> call, Response<List<Card>> response) {
+                        List<Card> listCard = response.body();
+                        storeData(listCard);
+                        activity.showList(listCard);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Card>> call, Throwable t) {
+                        Log.d("ERROR", "Api ERROR");
+                    }
+
+                });
+            }
+            else {
+                String json = sharedPreferences.getString("1", "");
+                List<Card> listCard = gson.fromJson(json, List.class);
                 activity.showList(listCard);
             }
+    }
 
-            @Override
-            public void onFailure(Call<List<Card>> call, Throwable t) {
-                Log.d("ERROR", "Api ERROR");
-            }
-        });
+    private void storeData(List<Card> listCard) {
 
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+            Gson gson = new Gson();
+            String json = gson.toJson(listCard);
+            editor.putString("1", json);
+            editor.commit();
     }
 }
+
