@@ -1,13 +1,16 @@
 package com.vogella.android.recyclerview;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.vogella.android.recyclerview.model.Card;
 import com.vogella.android.recyclerview.view.MainActivity;
 
+import java.lang.reflect.Type;
 import java.util.List;
 
 import retrofit2.Call;
@@ -19,10 +22,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainController {
 
     private MainActivity activity;
+    private SharedPreferences sharedPreferences;
+
     public MainController(MainActivity mainActivity) {
         this.activity = mainActivity;
+        sharedPreferences = activity.getSharedPreferences(Constants.DATABASE_NAME, Context.MODE_PRIVATE);
     }
-    SharedPreferences sharedPreferences = activity.getSharedPreferences(Constants.DATABASE_NAME, activity.MODE_PRIVATE);
 
 
     public void onStart(){
@@ -56,19 +61,19 @@ public class MainController {
             }
             else {
                 String json = sharedPreferences.getString("1", "");
-                List<Card> listCard = gson.fromJson(json, List.class);
+                Type listType = new TypeToken<List<Card>>(){}.getType();
+
+                List<Card> listCard = gson.fromJson(json, listType);
                 activity.showList(listCard);
             }
     }
 
     private void storeData(List<Card> listCard) {
-
-
         SharedPreferences.Editor editor = sharedPreferences.edit();
             Gson gson = new Gson();
             String json = gson.toJson(listCard);
             editor.putString("1", json);
-            editor.commit();
+            editor.apply();
     }
 }
 
