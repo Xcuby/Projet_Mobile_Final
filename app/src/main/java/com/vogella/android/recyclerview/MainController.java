@@ -62,7 +62,6 @@ public class MainController {
             else {
                 String json = sharedPreferences.getString("1", "");
                 Type listType = new TypeToken<List<Card>>(){}.getType();
-
                 List<Card> listCard = gson.fromJson(json, listType);
                 activity.showList(listCard);
             }
