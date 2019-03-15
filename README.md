@@ -34,7 +34,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
 
 - SplashScreen affichant une image d'introducton Hearstone
 
-                            <img src="readme_img/splash.jpg" alt="splash" width="250">
+<img src="readme_img/splash.jpg" alt="splash" width="250">
 
 ### Ecran Home 
 
@@ -43,7 +43,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
   - Nom de la carte en titre
   - Rareté de la carte en sous-titre
 
-                            <img src="readme_img/liste.jpg" alt="liste" width="250" >
+<img src="readme_img/liste.jpg" alt="liste" width="250" >
 
 ### Ecran du détail de la carte
 
@@ -57,4 +57,4 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
   - Si elle est encore créable
   - Effet de la carte
 
-                            <img src="readme_img/detail.jpg" alt="détail" width="250">
+<img src="readme_img/detail.jpg" alt="détail" width="250">
