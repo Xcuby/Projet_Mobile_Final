@@ -34,7 +34,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
 
 - SplashScreen affichant une image d'introducton Hearstone
 
-<img src="readme_img/splash.jpg" alt="splash" width="250">
+<center><img src="readme_img/splash.jpg" alt="splash" width="250"></center>
 
 ### Ecran Home 
 
