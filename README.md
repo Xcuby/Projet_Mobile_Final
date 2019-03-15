@@ -27,6 +27,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
   - Stockage des données en cache (sharedPreferences)
   - SplashScreen
   - Animation entre SplashScreen et la liste (disparition progressive)
+  - Implémentation Fabric (crash analytics)
 
 ## Fonctionnalités: 
 
