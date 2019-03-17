@@ -41,7 +41,7 @@ public class MainController {
                 .build();
 
         RestCardApi restCardApi = retrofit.create(RestCardApi.class);
-            if (!sharedPreferences.contains("1")) {
+            if (!sharedPreferences.contains(Constants.DATABASE_NAME)) {
 
                 Call<List<Card>> call = restCardApi.getListCard();
                 call.enqueue(new Callback<List<Card>>() {
@@ -60,7 +60,7 @@ public class MainController {
                 });
             }
             else {
-                String json = sharedPreferences.getString("1", "");
+                String json = sharedPreferences.getString(Constants.DATABASE_NAME, "");
                 Type listType = new TypeToken<List<Card>>(){}.getType();
                 List<Card> listCard = gson.fromJson(json, listType);
                 activity.showList(listCard);
@@ -71,7 +71,7 @@ public class MainController {
         SharedPreferences.Editor editor = sharedPreferences.edit();
             Gson gson = new Gson();
             String json = gson.toJson(listCard);
-            editor.putString("1", json);
+            editor.putString(Constants.DATABASE_NAME, json);
             editor.apply();
     }
 }
