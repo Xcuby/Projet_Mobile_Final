@@ -28,6 +28,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
   - SplashScreen
   - Animation entre SplashScreen et la liste (disparition progressive)
   - Implémentation de Fabric (crash analytics)
+  - APK de l'application (dans la racine du projet)
 
 ## Fonctionnalités: 
 
