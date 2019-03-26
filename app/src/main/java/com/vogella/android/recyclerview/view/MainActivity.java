@@ -7,8 +7,8 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.vogella.android.recyclerview.MainController;
-import com.vogella.android.recyclerview.MyAdapter;
+import com.vogella.android.recyclerview.controller.MainController;
+import com.vogella.android.recyclerview.controller.MyAdapter;
 import com.vogella.android.recyclerview.model.Card;
 
 import java.util.List;

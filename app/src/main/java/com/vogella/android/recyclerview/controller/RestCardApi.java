@@ -1,4 +1,4 @@
-package com.vogella.android.recyclerview;
+package com.vogella.android.recyclerview.controller;
 
 import com.vogella.android.recyclerview.model.Card;
 
