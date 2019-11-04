@@ -3,11 +3,14 @@ apply plugin: 'io.fabric'
 
 buildscript {
     repositories {
+        jcenter()
+        google()
         maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
         classpath 'io.fabric.tools:gradle:1.+'
+        classpath 'com.android.tools.build:gradle:3.4.2'
     }
 }
 
@@ -20,6 +23,7 @@ repositories {
 android {
     compileSdkVersion 28
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "xavier.albanet.projetprogrammationmobile"
         minSdkVersion 15
         targetSdkVersion 28
@@ -35,7 +39,18 @@ android {
     }
 }
 
+ext {
+    appCompatVersion = '1.0.0'
+    designSupportVersion = '1.0.0'
+    recyclerViewVersion = '1.0.0'
+}
+
 dependencies {
+    implementation "androidx.annotation:annotation:1.1.0"
+    implementation "androidx.transition:transition:1.1.0"
+    implementation "androidx.vectordrawable:vectordrawable:1.0.0" // VectorDrawableCompat
+    implementation "androidx.vectordrawable:vectordrawable-animated:1.0.0" // AnimatedVectorDrawableCompat
+    implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
@@ -47,4 +62,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "com.google.android.material:material:${designSupportVersion}"
+    implementation "androidx.percentlayout:percentlayout:1.0.0"
+
 }
