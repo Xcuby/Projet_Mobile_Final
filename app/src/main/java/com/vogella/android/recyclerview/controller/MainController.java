@@ -42,7 +42,6 @@ public class MainController {
 
         RestCardApi restCardApi = retrofit.create(RestCardApi.class);
             if (!sharedPreferences.contains(Constants.DATABASE_NAME)) {
-
                 Call<List<Card>> call = restCardApi.getListCard();
                 call.enqueue(new Callback<List<Card>>() {
                     @Override
