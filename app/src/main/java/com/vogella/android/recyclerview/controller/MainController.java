@@ -48,7 +48,6 @@ public class MainController {
                     public void onResponse(Call<List<Card>> call, Response<List<Card>> response) {
                         List<Card> listCard = response.body();
                         storeData(listCard);
-                        activity.showList(listCard);
                     }
 
                     @Override
@@ -61,8 +60,6 @@ public class MainController {
             else {
                 String json = sharedPreferences.getString(Constants.DATABASE_NAME, "");
                 Type listType = new TypeToken<List<Card>>(){}.getType();
-                List<Card> listCard = gson.fromJson(json, listType);
-                activity.showList(listCard);
             }
     }
 
