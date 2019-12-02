@@ -63,6 +63,7 @@ dependencies {
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
     implementation "androidx.appcompat:appcompat:${appCompatVersion}"
     implementation "com.google.android.material:material:${designSupportVersion}"
+    implementation "com.google.android.material:material:<version>"
     implementation "androidx.percentlayout:percentlayout:1.0.0"
 
 }

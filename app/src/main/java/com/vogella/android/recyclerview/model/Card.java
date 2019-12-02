@@ -10,6 +10,8 @@ public class Card {
     private String text;
     private String type;
     private String id;
+    private boolean isFav;
+
 
     public String getCardClass() {
         return cardClass;
@@ -46,4 +48,8 @@ public class Card {
     public String getId() {
         return id;
     }
+
+    public boolean isFav() { return isFav; }
+
+    public void changeFav () {isFav = !isFav;}
 }

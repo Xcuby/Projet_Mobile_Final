@@ -23,6 +23,7 @@ public class HomeController {
 
     private HomeFragment fragment;
     private SharedPreferences sharedPreferences;
+    private List<Card> listCard;
 
     public HomeController(HomeFragment homeFragment) {
         this.fragment = homeFragment;
@@ -36,8 +37,26 @@ public class HomeController {
                 .create();
                 String json = sharedPreferences.getString(Constants.DATABASE_NAME, "");
                 Type listType = new TypeToken<List<Card>>(){}.getType();
-                List<Card> listCard = gson.fromJson(json, listType);
+                listCard = gson.fromJson(json, listType);
                 fragment.showList(listCard);
+    }
+
+    private void storeData(List<Card> listCard) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(listCard);
+        editor.putString(Constants.DATABASE_NAME, json);
+        editor.apply();
+    }
+
+    public void onClickedFavorite(Card cardClicked) {
+        for (Card card : listCard) {
+            if(card.getId().equals(cardClicked.getId())){
+                card.changeFav();
+                 break;
+            }
+        }
+        storeData(listCard);
     }
 }
 

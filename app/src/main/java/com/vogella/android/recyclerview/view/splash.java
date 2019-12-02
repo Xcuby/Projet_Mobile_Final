@@ -14,6 +14,8 @@ public class splash extends AppCompatActivity {
     private static int time = 500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //if(getSupportActionBar()!=null)
+          //  this.getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash);

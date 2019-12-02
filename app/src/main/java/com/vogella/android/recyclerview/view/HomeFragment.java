@@ -3,12 +3,8 @@ package com.vogella.android.recyclerview.view;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 
 import com.vogella.android.recyclerview.controller.HomeController;
 import com.vogella.android.recyclerview.controller.MyAdapter;
@@ -51,7 +47,12 @@ public class HomeFragment extends Fragment {
             layoutManager = new LinearLayoutManager(this.getActivity());
             recyclerView.setLayoutManager(layoutManager);
             // define an adapter
-            mAdapter = new MyAdapter(this.getActivity(), card);
+            mAdapter = new MyAdapter(this.getActivity(), card, new MyAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(Card card) {
+                    controller.onClickedFavorite(card);
+                }
+            });
             recyclerView.setAdapter(mAdapter);
             recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
         }

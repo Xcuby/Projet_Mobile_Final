@@ -13,6 +13,8 @@ import com.vogella.android.recyclerview.view.MainActivity;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -47,6 +49,7 @@ public class MainController {
                     @Override
                     public void onResponse(Call<List<Card>> call, Response<List<Card>> response) {
                         List<Card> listCard = response.body();
+                        //regarder sur chaque élément ->favoris
                         storeData(listCard);
                     }
 

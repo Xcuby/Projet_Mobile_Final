@@ -11,14 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.vogella.android.recyclerview.view.splash">
+        <activity android:name="com.vogella.android.recyclerview.view.splash"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.vogella.android.recyclerview.view.MainActivity"></activity>
+        <activity android:name="com.vogella.android.recyclerview.view.MainActivity">
+        </activity>
         <activity android:name="com.vogella.android.recyclerview.view.CardActivity" />
         <meta-data
             android:name="io.fabric.ApiKey"

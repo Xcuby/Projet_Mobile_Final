@@ -9,6 +9,8 @@ import android.widget.SearchView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.vogella.android.recyclerview.controller.MainController;
 
+import java.util.Observer;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;

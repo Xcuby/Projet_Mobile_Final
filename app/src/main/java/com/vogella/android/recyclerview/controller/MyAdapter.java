@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,9 +19,14 @@ import java.util.List;
 
 import xavier.albanet.projetprogrammationmobile.R;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     private List<Card> values;
     private Context myContext;
+    private final OnItemClickListener listener;
+
+    public interface OnItemClickListener{
+        void onItemClick(Card card);
+    }
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -31,6 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         public TextView txtFooter;
         public ImageView imgIcon;
         public View layout;
+        public ImageView imgFavorite;
 
         public ViewHolder(View v) {
             super(v);
@@ -38,13 +45,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
             imgIcon = (ImageView) v.findViewById(R.id.icon);
+            imgFavorite =  v.findViewById(R.id.image_favorite);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(Context context, List<Card> myDataset) {
-        values = myDataset;
-        myContext = context;
+    public MyAdapter(Context context, List<Card> myDataset, OnItemClickListener listener) {
+        this.values = myDataset;
+        this.myContext = context;
+        this.listener = listener;
     }
 
     // Create new views (invoked by the layout manager)
@@ -62,10 +71,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        Card currentCard = values.get(position);
+        final Card currentCard = values.get(position);
         final String name = currentCard.getName();
         final String cardclass = currentCard.getCardClass();
         final int cost = currentCard.getCost();
@@ -76,8 +85,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         final String text = currentCard.getText();
         final String id = currentCard.getId();
         holder.txtHeader.setText(name);
+        holder.txtFooter.setText(rarity);
         Picasso.get().load("https://art.hearthstonejson.com/v1/256x/" + id + ".jpg").into(holder.imgIcon);
-        holder.txtHeader.setOnClickListener(new OnClickListener() {
+        holder.itemView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(myContext, CardActivity.class);
@@ -93,7 +103,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 myContext.startActivity(intent);
             }
         });
-        holder.txtFooter.setText(rarity);
+
+        holder.imgFavorite.setSelected(currentCard.isFav());
+
+        holder.imgFavorite.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.imgFavorite.setSelected(!holder.imgFavorite.isSelected());
+                listener.onItemClick(currentCard);
+            }
+        });
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
