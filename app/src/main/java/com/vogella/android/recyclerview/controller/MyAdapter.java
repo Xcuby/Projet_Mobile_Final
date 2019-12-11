@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -86,6 +88,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         final String id = currentCard.getId();
         holder.txtHeader.setText(name);
         holder.txtFooter.setText(text);
+        holder.imgIcon.setAnimation(AnimationUtils.loadAnimation(myContext, R.anim.fade_transition_animation));
+        holder.itemView.setAnimation(AnimationUtils.loadAnimation(myContext, R.anim.fade_scale_animation));
         Picasso.get().load("https://art.hearthstonejson.com/v1/256x/" + id + ".jpg").into(holder.imgIcon);
         holder.itemView.setOnClickListener(new OnClickListener() {
             @Override
