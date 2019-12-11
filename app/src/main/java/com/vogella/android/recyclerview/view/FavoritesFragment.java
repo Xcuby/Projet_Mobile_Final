@@ -64,6 +64,5 @@ public class FavoritesFragment extends Fragment {
             }
         });
         recyclerView.setAdapter(mAdapter);
-        recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
     }
 }

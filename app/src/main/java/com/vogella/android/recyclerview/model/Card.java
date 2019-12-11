@@ -38,6 +38,15 @@ public class Card {
     }
 
     public String getText() {
+        if (text != null) {
+            text = text.replace("<b>", "");
+            text = text.replace("</b>", " ");
+            text = text.replace("#", "");
+            text = text.replace("<i>", "");
+            text = text.replace("</i>", "");
+            text = text.replace("[x]", "");
+            text = text.replace("$", "");
+        }
         return text;
     }
 

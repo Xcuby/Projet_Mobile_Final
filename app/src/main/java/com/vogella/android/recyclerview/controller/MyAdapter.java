@@ -85,7 +85,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         final String text = currentCard.getText();
         final String id = currentCard.getId();
         holder.txtHeader.setText(name);
-        holder.txtFooter.setText(rarity);
+        holder.txtFooter.setText(text);
         Picasso.get().load("https://art.hearthstonejson.com/v1/256x/" + id + ".jpg").into(holder.imgIcon);
         holder.itemView.setOnClickListener(new OnClickListener() {
             @Override

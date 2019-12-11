@@ -3,9 +3,14 @@ package com.vogella.android.recyclerview.view;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
+import com.google.android.material.internal.NavigationMenuView;
 import com.vogella.android.recyclerview.controller.HomeController;
 import com.vogella.android.recyclerview.controller.MyAdapter;
 import com.vogella.android.recyclerview.model.Card;
@@ -54,6 +59,27 @@ public class HomeFragment extends Fragment {
                 }
             });
             recyclerView.setAdapter(mAdapter);
-            recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
         }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.main_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                controller.getFilter().filter(newText);
+                return false;
+            }
+        });
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 }
