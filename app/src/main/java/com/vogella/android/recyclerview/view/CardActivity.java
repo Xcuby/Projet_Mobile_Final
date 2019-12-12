@@ -25,30 +25,30 @@ public class CardActivity extends Activity {
             String cardRarity = getIntent().getStringExtra("Cardrarity");
             String cardType = getIntent().getStringExtra("Cardtype");
             String cardSet = getIntent().getStringExtra("Cardset");
-            boolean cardCollectible = getIntent().getBooleanExtra("Cardcollectible", false);
+            String cardCollectible = getIntent().getStringExtra("Cardcollectible");
             String cardText = getIntent().getStringExtra("Cardtext");
             String cardId = getIntent().getStringExtra("Cardid");
             setCard(cardName, cardClass, cardCost, cardRarity, cardType, cardSet, cardCollectible, cardText, cardId);
         }
     }
 
-    private void setCard(String cardName, String cardClass, int cardCost, String cardRarity, String cardType, String cardSet, boolean cardCollectible, String cardText, String cardId){
+    private void setCard(String cardName, String cardClass, int cardCost, String cardRarity, String cardType, String cardSet, String cardCollectible, String cardText, String cardId){
         TextView name = findViewById(R.id.CardName);
-        name.setText("Name : " + cardName);
+        name.setText(cardName);
         TextView Class = findViewById(R.id.CardClass);
-        Class.setText("Class : " + cardClass);
+        Class.setText(" " + cardClass);
         TextView cost = findViewById(R.id.CardCost);
-        cost.setText("Cost : " + cardCost + " mana");
+        cost.setText(cardCost);
         TextView rarity = findViewById(R.id.CardRarity);
-        rarity.setText("Rarity : " + cardRarity);
+        rarity.setText(cardRarity);
         TextView type = findViewById(R.id.CardType);
-        type.setText("Type : " + cardType);
+        type.setText("It's a " + cardType);
         TextView set = findViewById(R.id.CardSet);
-        set.setText("Set : " + cardSet);
+        set.setText(cardSet);
         TextView collectible = findViewById(R.id.CardCollectible);
-        collectible.setText("Collectible : " + cardCollectible);
+        collectible.setText(cardCollectible);
         TextView text = findViewById(R.id.CardText);
-        text.setText("Effect : " + cardText);
+        text.setText(cardText);
         ImageView id = findViewById(R.id.CardId);
         Picasso.get().load("https://art.hearthstonejson.com/v1/256x/"+cardId+".jpg").into(id);
     }

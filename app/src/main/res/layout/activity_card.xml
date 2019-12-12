@@ -140,15 +140,15 @@
 
     <ImageView
         android:id="@+id/CardId"
-        android:layout_width="405dp"
-        android:layout_height="242dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:contentDescription="TODO"
-        android:padding="70dp"
-        android:src="@mipmap/ic_launcher"
         android:textAlignment="center"
+        android:contentDescription="TODO"
+        android:src="@mipmap/ic_launcher"
+        android:padding="70dp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="6dp" />
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

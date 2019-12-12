@@ -2,6 +2,8 @@ package com.vogella.android.recyclerview.view;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +32,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class FavoritesFragment extends Fragment {
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private MyAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private FavoriteController controller;
     private static final String PREFS = "PREFS";
@@ -46,6 +48,25 @@ public class FavoritesFragment extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view_fav);
         sharedPreferences = getContext().getSharedPreferences(PREFS, MODE_PRIVATE);
         controller = new FavoriteController(this);
+        rootLayout = view.findViewById(R.id.root_layout_fav);
+        searchInput = view.findViewById(R.id.search_input_fav);
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mAdapter.getFilter().filter(s);
+                search = s;
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         controller.onStart();
         return view;
     }
