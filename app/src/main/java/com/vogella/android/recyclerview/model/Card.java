@@ -17,8 +17,12 @@ public class Card {
         return cardClass;
     }
 
-    public boolean isCollectible() {
-        return collectible;
+    public String isCollectible() {
+        if (collectible) {
+            return "This card is currently craftable";
+        } else {
+            return "This card is currently not craftable";
+        }
     }
 
     public int getCost() {

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.vogella.android.recyclerview.controller.FavoriteController;
 import com.vogella.android.recyclerview.controller.MyAdapter;
@@ -18,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,6 +35,9 @@ public class FavoritesFragment extends Fragment {
     private FavoriteController controller;
     private static final String PREFS = "PREFS";
     SharedPreferences sharedPreferences;
+    ConstraintLayout rootLayout;
+    EditText searchInput ;
+    CharSequence search="";
 
     @Nullable
     @Override
@@ -57,7 +62,7 @@ public class FavoritesFragment extends Fragment {
         layoutManager = new LinearLayoutManager(this.getActivity());
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
-        mAdapter = new MyAdapter(this.getActivity(), listFav, new MyAdapter.OnItemClickListener() {
+        this.mAdapter = new MyAdapter(this.getActivity(), listFav, new MyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Card card) {
                 controller.onClickedFavorite(card);
