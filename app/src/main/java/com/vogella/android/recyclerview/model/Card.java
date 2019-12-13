@@ -14,7 +14,12 @@ public class Card {
 
 
     public String getCardClass() {
-        return cardClass;
+        if (cardClass == "NEUTRAL") {
+            return "ALL";
+        }
+        else {
+            return cardClass;
+        }
     }
 
     public String isCollectible() {

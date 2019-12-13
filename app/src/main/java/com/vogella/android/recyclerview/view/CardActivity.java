@@ -36,11 +36,11 @@ public class CardActivity extends Activity {
         TextView name = findViewById(R.id.CardName);
         name.setText(cardName);
         TextView Class = findViewById(R.id.CardClass);
-        Class.setText("From the class"+ cardClass);
+        Class.setText("It's for "+ cardClass);
         TextView cost = findViewById(R.id.CardCost);
-        cost.setText(" " + cardCost);
+        cost.setText("It costs "+ cardCost + " mana");
         TextView rarity = findViewById(R.id.CardRarity);
-        rarity.setText("It is " + cardRarity);
+        rarity.setText("It's a " + cardRarity + " card");
         TextView type = findViewById(R.id.CardType);
         type.setText("It's a " + cardType);
         TextView set = findViewById(R.id.CardSet);
