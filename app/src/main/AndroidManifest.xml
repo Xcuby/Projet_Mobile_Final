@@ -25,6 +25,9 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="29a289e3aed4f3b081ff9d13ff5b4ced63cff607" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

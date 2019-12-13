@@ -5,24 +5,28 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="Orientation">
+    tools:ignore="Orientation"
+    android:background="@drawable/background_card">
 
     <TextView
-        android:textColor="@color/colorPrimary"
         android:id="@+id/CardName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:ellipsize="marquee"
+        android:fontFamily="@font/akronim"
         android:text="Name : "
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="#FFC107"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.417" />
 
     <TextView
         android:id="@+id/CardClass"
@@ -30,32 +34,39 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:ellipsize="marquee"
+        android:fontFamily="@font/akronim"
         android:text="Class :"
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="#C72222"
+        android:textSize="24sp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/CardCost"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CardName"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintVertical_bias="0.41" />
 
     <TextView
         android:id="@+id/CardCost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="46dp"
         android:baselineAligned="false"
         android:ellipsize="marquee"
+        android:fontFamily="@font/akronim"
         android:text="Cost :"
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="#01192C"
+        android:textSize="50sp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintVertical_bias="0.57" />
 
     <TextView
         android:id="@+id/CardRarity"
@@ -64,14 +75,18 @@
         android:baselineAligned="false"
         android:ellipsize="marquee"
         android:text="Rarity :"
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="#FF5722"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:visibility="visible"
+        android:fontFamily="@font/akronim"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        app:layout_constraintVertical_bias="0.656" />
 
     <TextView
         android:id="@+id/CardType"
@@ -79,15 +94,19 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:ellipsize="marquee"
+        android:fontFamily="@font/akronim"
         android:text="Type :"
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="#4CAF50"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63" />
+        app:layout_constraintVertical_bias="0.731" />
 
     <TextView
         android:id="@+id/CardSet"
@@ -95,15 +114,19 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:ellipsize="marquee"
+        android:fontFamily="@font/akronim"
         android:text="Set :"
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69" />
+        app:layout_constraintVertical_bias="0.797" />
 
     <TextView
         android:id="@+id/CardCollectible"
@@ -111,15 +134,19 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:ellipsize="marquee"
+        android:fontFamily="@font/akronim"
         android:text="Collectible :"
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="#F0E9E9"
+        android:textSize="20dp"
+        android:textStyle="italic"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.863" />
 
     <TextView
         android:id="@+id/CardText"
@@ -127,28 +154,43 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:ellipsize="marquee"
+        android:fontFamily="@font/akronim"
         android:text="Text :"
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="#CDDC39"
+        android:textSize="20dp"
+        android:textStyle="italic"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintVertical_bias="0.926" />
 
     <ImageView
         android:id="@+id/CardId"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_width="409dp"
+        android:layout_height="261dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:textAlignment="center"
         android:contentDescription="TODO"
         android:src="@mipmap/ic_launcher"
-        android:padding="70dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-         />
+        tools:layout_editor_absoluteY="2dp" />
+
+    <ImageView
+        android:layout_width="304dp"
+        android:layout_height="189dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="TODO"
+        android:src="@drawable/mana"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="74dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
