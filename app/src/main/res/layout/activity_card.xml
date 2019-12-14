@@ -18,7 +18,7 @@
         android:text="Name : "
         android:textAlignment="center"
         android:textColor="#FFC107"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.417" />
+        app:layout_constraintVertical_bias="0.434" />
 
     <TextView
         android:id="@+id/CardClass"
@@ -37,8 +37,8 @@
         android:fontFamily="@font/akronim"
         android:text="Class :"
         android:textAlignment="center"
-        android:textColor="#C72222"
-        android:textSize="30sp"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/CardCost"
@@ -46,7 +46,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CardName"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintVertical_bias="0.614" />
 
     <TextView
         android:id="@+id/CardCost"
@@ -57,8 +57,8 @@
         android:fontFamily="@font/akronim"
         android:text="Cost :"
         android:textAlignment="center"
-        android:textColor="#00BCD4"
-        android:textSize="30sp"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +66,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        app:layout_constraintVertical_bias="0.59" />
 
     <TextView
         android:id="@+id/CardRarity"
@@ -77,8 +77,8 @@
         android:fontFamily="@font/akronim"
         android:text="Rarity :"
         android:textAlignment="center"
-        android:textColor="#FF5722"
-        android:textSize="30sp"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,7 +86,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.67" />
 
     <TextView
         android:id="@+id/CardType"
@@ -97,8 +97,8 @@
         android:fontFamily="@font/akronim"
         android:text="Type :"
         android:textAlignment="center"
-        android:textColor="#4CAF50"
-        android:textSize="30sp"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +106,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731" />
+        app:layout_constraintVertical_bias="0.74" />
 
     <TextView
         android:id="@+id/CardSet"
@@ -117,8 +117,8 @@
         android:fontFamily="@font/akronim"
         android:text="Set :"
         android:textAlignment="center"
-        android:textColor="#2196F3"
-        android:textSize="30sp"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -126,7 +126,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintVertical_bias="0.811" />
 
     <TextView
         android:id="@+id/CardCollectible"
@@ -137,8 +137,8 @@
         android:fontFamily="@font/akronim"
         android:text="Collectible :"
         android:textAlignment="center"
-        android:textColor="#F0E9E9"
-        android:textSize="20dp"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
         android:textStyle="italic"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -146,7 +146,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.872" />
 
     <TextView
         android:id="@+id/CardText"
@@ -157,28 +157,29 @@
         android:fontFamily="@font/akronim"
         android:text="Text :"
         android:textAlignment="center"
-        android:textColor="#CDDC39"
-        android:textSize="20dp"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
         android:textStyle="italic"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintVertical_bias="0.946" />
 
     <ImageView
         android:id="@+id/CardId"
-        android:layout_width="409dp"
-        android:layout_height="261dp"
+        android:layout_width="501dp"
+        android:layout_height="263dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:contentDescription="TODO"
         android:src="@mipmap/ic_launcher"
         android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="2dp" />
+        tools:layout_editor_absoluteY="-3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
