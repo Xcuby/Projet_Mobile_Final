@@ -34,7 +34,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
 
 ### Premier écran 
 
-- SplashScreen affichant une image d'introducton Hearstone
+- SplashScreen affichant une image d'introduction Hearstone
 
 <img src="readme_img/splash.jpg" alt="splash" width="250">
 
