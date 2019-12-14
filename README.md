@@ -22,7 +22,10 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
 - Affichage d'une liste dans un RecyclerView
 - Affichage du détail d'un item de la liste
 - Fragment
-- Design
+- Design :
+    - Barre de recherche
+    - RecyclerView et ses éléments
+    - Ecran du détail de la carte
 - Architecture MVC
 - GIT
 
@@ -35,8 +38,8 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
   - APK de l'application (dans la racine du projet)
   - Tests Unitaires
   - Clean Architecture
-  - Barre de recherche sur les deux fragments
-  - Ajout/suppression de cartes dans les favoris (également stocké en cache) avec un simple 
+  - Barre de recherche sur les deux fragments (Home et favoris)
+  - Ajout/suppression de cartes dans les favoris (également stocké en cache) avec un simple appui sur le coeur correspondant à l'élément
   
 
 ## Fonctionnalités: 
@@ -45,7 +48,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
 
 - SplashScreen affichant une image d'introduction Hearstone
 
-<img src="readme_img/splash.jpg" alt="splash" width="250">
+<img src="IMG_README/Screenshot_20191214-032329_projetProgrammationMobile.jpg" alt="splash" width="250">
 
 ### Fragment Home 
 
@@ -55,7 +58,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
   - Description de la carte
   - Son appartenance ou non aux favoris (carte favorite si le coeur rouge est plein)
   
-<img src="readme_img/liste.jpg" alt="liste" width="250" class="centered">
+<img src="IMG_README/Screenshot_20191214-032341_projetProgrammationMobile.jpg" alt="liste" width="250" class="centered">
 
 ### Fragment Favoris
 
@@ -65,8 +68,20 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
   - Description de la carte
   - Coeur rouge plein (car il s'agit seulement des cartes favorites)
   
-  
-  
+<img src="IMG_README/Screenshot_20191214-185208_projetProgrammationMobile.jpg" alt="liste" width="250" class="centered">
+
+### Défilement de la liste
+
+Eléments de la liste apparaissant progressivement en mode balayage de gauche à droite
+
+<img src="IMG_README/Screenshot_20191214-032434_projetProgrammationMobile.jpg" alt="liste" width="250" class="centered">
+
+### Barre de recherche 
+
+Recherche d'un élément dans la liste en fonction de son nom et de l'entrée utilisateur dans la barre de recherche. L'apparition des élements lors de la recherche se fait comme dans le défilement de la liste.
+
+<img src="IMG_README/Screenshot_20191214-181943_projetProgrammationMobile.jpg" alt="liste" width="250" class="centered">
+
 ### Ecran du détail de la carte
 
 - Avec une image de fond de l'ambiance d'Hearstone et la police (et couleur), affiche les différentes informations sur la carte qui sont :
@@ -79,4 +94,4 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
   - Si elle est encore créable
   - Effet de la carte
 
-<img src="readme_img/detail.jpg" alt="détail" width="250" class="centered">
+<img src="IMG_README/Screenshot_20191214-185602_projetProgrammationMobile.jpg" alt="détail" width="250" class="centered">
