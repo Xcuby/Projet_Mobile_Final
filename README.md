@@ -52,7 +52,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
 
 ### Fragment Home 
 
-- Affiche de toute la liste des cartes (plus de 1500 cartes) avec :
+- Affiche de toute la liste des cartes Hearstone avec :
   - Image de la carte
   - Nom de la carte en titre
   - Description de la carte
