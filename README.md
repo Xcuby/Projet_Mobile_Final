@@ -48,7 +48,7 @@ https://github.com/Xcuby/Projet_Mobile_Final.git
 
 - SplashScreen affichant une image d'introduction Hearstone
 
-<img src="readme_img/Screenshot_20191214-032329_projetProgrammationMobile.jpg" alt="splash" width="250">
+<img src="IMG_README/Screenshot_20191214-032329_projetProgrammationMobile.jpg" alt="splash" width="250">
 
 ### Fragment Home 
 
@@ -94,4 +94,4 @@ Recherche d'un élément dans la liste en fonction de son nom et de l'entrée ut
   - Si elle est encore créable
   - Effet de la carte
 
-<img src="IMG_README/Screenshot_20191214-165025_projetProgrammationMobile.jpg" alt="détail" width="250" class="centered">
+<img src="IMG_README/Screenshot_20191214-185602_projetProgrammationMobile.jpg" alt="détail" width="250" class="centered">
